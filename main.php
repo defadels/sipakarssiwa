@@ -383,7 +383,7 @@ else{ ?>
     <!-- Flot plugins -->
     <script src="assets/js/flot/jquery.flot.orderBars.js"></script>
     <script src="assets/js/flot/date.js"></script>
-    <script src="assets/js/flot/jquery.flot.spline.js"></script>
+    <script src="assets/js/flot/jquery.flot.spline.js"></script> 
     <script src="assets/js/flot/curvedLines.js"></script>
     <!-- jVectorMap -->
     <script src="assets/js/maps/jquery-jvectormap-2.0.3.min.js"></script>

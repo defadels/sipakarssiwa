@@ -3,7 +3,7 @@
 $server = "localhost";
 $username = "root";
 $password = "";
-$database = "pembinaan_karakter";
+$database = "pembinaan_karakter"; 
 
 // Koneksi dan memilih database di server
 //mysql_connect($server,$username,$password) or die("Koneksi gagal");

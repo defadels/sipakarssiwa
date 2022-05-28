@@ -1,6 +1,6 @@
 <?php
 // untuk memasukkan file koneksi.php
-include "lib/koneksi.php";
+include "lib/koneksi.php"; 
 // menangkap variabel POST dari form login / index.php
 $username = $_POST['username'];
 $pass = ($_POST['password']);
