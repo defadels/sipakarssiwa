@@ -2,7 +2,7 @@
 // definisikan koneksi ke database
 $server = "localhost";
 $username = "root";
-$password = "";
+$password = "d[2HLa=5quUJS[{c";
 $database = "pembinaan_karakter"; 
 
 // Koneksi dan memilih database di server
