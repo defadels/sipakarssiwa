@@ -8,7 +8,7 @@
     $poin = $_POST['poin'];
 
     if ($poin > 0 && $poin<=125) {
-        $querySimpan = mysqli_query($connect,"INSERT INTO pelanggaran (id_sub_kategori, nama_pelanggaran, poin) VALUES ('$idSubKategori', '$namaPelanggaran', '$poin')");
+        $querySimpan = mysqli_query($connect,"INSERT INTO pelanggaran (id_sub_katagori, nama_pelanggaran, poin) VALUES ('$idSubKategori', '$namaPelanggaran', '$poin')");
 
         $redirectSuccess = "main.php?module=pelanggaran";
         $redirectError = "main.php?module=tambah_pelanggaran";

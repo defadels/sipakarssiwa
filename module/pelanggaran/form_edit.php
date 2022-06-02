@@ -42,11 +42,11 @@ elseif ($_SESSION['akses']==1 or $_SESSION['akses']==2){ ?>
 
                        <?php
                         $idPelanggaran=$_GET['id_pelanggaran'];
-                        $pelanggaran=mysqli_query($connect,"SELECT * FROM pelanggaran JOIN sub_kat_pelanggaran ON pelanggaran.id_sub_kategori=sub_kat_pelanggaran.id_sub_kategori JOIN kat_pelanggaran ON kat_pelanggaran.id_kat_pelanggaran=sub_kat_pelanggaran.id_kat_pelanggaran WHERE id_pelanggaran='$idPelanggaran'");
+                        $pelanggaran=mysqli_query($connect,"SELECT * FROM pelanggaran JOIN sub_kat_pelanggaran ON pelanggaran.id_sub_katagori=sub_kat_pelanggaran.id_sub_katagori JOIN kat_pelanggaran ON kat_pelanggaran.id_kat_pelanggaran=sub_kat_pelanggaran.id_kat_pelanggaran WHERE id_pelanggaran='$idPelanggaran'");
                         $plgrn=mysqli_fetch_array($pelanggaran);
 
                         $idKatPelanggaran = $plgrn['id_kat_pelanggaran'];
-                        $idSubKategori = $plgrn['id_sub_kategori'];
+                        $idSubKategori = $plgrn['id_sub_katagori'];
                         $jenisPelanggaran = $plgrn['nama_pelanggaran'];
                         $poin = $plgrn['poin'];
                       ?>
@@ -61,7 +61,7 @@ elseif ($_SESSION['akses']==1 or $_SESSION['akses']==2){ ?>
                               $kat_pelanggaran=mysqli_query($connect,"SELECT * FROM kat_pelanggaran");
                               while ($kat=mysqli_fetch_array($kat_pelanggaran)) {
                              ?>
-                            <option <?php if( $kat['id_kat_pelanggaran']=='$idKatPelanggaran'){echo "selected"; } ?> value="<?php echo $kat['id_kat_pelanggaran']; ?>"><?php echo $kat['nama_kategori']; ?></option>
+                            <option <?php if( $kat['id_kat_pelanggaran']=='$idKatPelanggaran'){echo "selected"; } ?> value="<?php echo $kat['id_kat_pelanggaran']; ?>"><?php echo $kat['nama_katagori']; ?></option>
                             <?php } ?>
                           </select>
                         </div>

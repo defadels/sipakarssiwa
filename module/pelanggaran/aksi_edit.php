@@ -13,7 +13,7 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
     $namaPelanggaran = $_POST['jenisPelanggaran'];
     $poin = $_POST['poin'];
     
-    $queryEdit = mysqli_query($connect,"UPDATE pelanggaran SET nama_pelanggaran ='$namaPelanggaran', id_sub_kategori='$idSubKategori', poin='$poin' WHERE id_pelanggaran='$idPelanggaran'" );
+    $queryEdit = mysqli_query($connect,"UPDATE pelanggaran SET nama_pelanggaran ='$namaPelanggaran', id_sub_katagori='$idSubKategori', poin='$poin' WHERE id_pelanggaran='$idPelanggaran'" );
 
     $redirectSuccess = "main.php?module=pelanggaran";
     $redirectFailed = "main.php?module=edit_pelanggaran&id_pelanggaran=";
