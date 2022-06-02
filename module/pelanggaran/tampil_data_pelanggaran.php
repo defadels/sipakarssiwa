@@ -206,7 +206,7 @@ elseif ($_SESSION['akses']==1 or $_SESSION['akses']==2 or $_SESSION['akses']==5)
                                         <td class=" "><?php echo $subKat['nama_sub_katagori'];?></td>
                                         <td class=" last">
                                           <div class="btn-group">
-                                            <a href="main.php?module=edit_sub_katagori&id_sub_katagori=<?php echo $subKat['id_sub_katagori']; ?>" class="btn btn-warning btn-sm"><i class='fa fa-pencil'></i> Edit</button></a>
+                                            <a href="main.php?module=edit_sub_kategori&id_sub_katagori=<?php echo $subKat['id_sub_katagori']; ?>" class="btn btn-warning btn-sm"><i class='fa fa-pencil'></i> Edit</button></a>
                                           </div>
                                         </td>
                                       </tr>
