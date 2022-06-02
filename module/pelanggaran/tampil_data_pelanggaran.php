@@ -278,7 +278,7 @@ elseif ($_SESSION['akses']==1 or $_SESSION['akses']==2 or $_SESSION['akses']==5)
                       <tbody>
 
                         <?php 
-                            $pelanggaran = mysqli_query($connect,"SELECT * FROM pelanggaran JOIN sub_kat_pelanggaran ON pelanggaran.id_sub_kategori=sub_kat_pelanggaran.id_sub_kategori JOIN kat_pelanggaran ON kat_pelanggaran.id_kat_pelanggaran=sub_kat_pelanggaran.id_kat_pelanggaran
+                            $pelanggaran = mysqli_query($connect,"SELECT * FROM pelanggaran JOIN sub_kat_pelanggaran ON pelanggaran.id_sub_katagori=sub_kat_pelanggaran.id_sub_katagori JOIN kat_pelanggaran ON kat_pelanggaran.id_kat_pelanggaran=sub_kat_pelanggaran.id_kat_pelanggaran
                               ");
                             $no=1;
                             while($plg=mysqli_fetch_array($pelanggaran)){
@@ -286,7 +286,7 @@ elseif ($_SESSION['akses']==1 or $_SESSION['akses']==2 or $_SESSION['akses']==5)
 
                         <tr>
                           <td class=" "><?php echo $no;?></td>
-                          <td class=" "><?php echo $plg['nama_kategori'];?></td>
+                          <td class=" "><?php echo $plg['nama_katagori'];?></td>
                           <td class=" "><?php echo $plg['nama_pelanggaran'];?></td>
                           <td class=" "><?php echo $plg['poin'];?></td>
                           <?php

@@ -9,7 +9,7 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
     include "../../lib/config.php";
     
     $idPelanggaran = $_POST['idPelanggaran'];
-    $idSubKategori = $_POST['subKatPelanggaran'];
+    $idSubKategori = $_POST['katPelanggaran'];
     $namaPelanggaran = $_POST['jenisPelanggaran'];
     $poin = $_POST['poin'];
     

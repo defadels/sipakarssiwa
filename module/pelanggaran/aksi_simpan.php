@@ -3,7 +3,7 @@
     include "../../lib/koneksi.php";
 
     //$idKatPelanggaran = $_POST['katPelanggaran'];
-    $idSubKategori = $_POST['subKatPelanggaran'];
+    $idSubKategori = $_POST['katPelanggaran'];
     $namaPelanggaran = $_POST['jenisPelanggaran'];
     $poin = $_POST['poin'];
 
@@ -11,7 +11,7 @@
         $querySimpan = mysqli_query($connect,"INSERT INTO pelanggaran (id_sub_katagori, nama_pelanggaran, poin) VALUES ('$idSubKategori', '$namaPelanggaran', '$poin')");
 
         $redirectSuccess = "main.php?module=pelanggaran";
-        $redirectError = "main.php?module=tambah_pelanggaran";
+        $redirectFailed = "main.php?module=tambah_pelanggaran";
         $validation = "main.php?module=tambah_pelanggaran";
 
         if ($querySimpan) {
