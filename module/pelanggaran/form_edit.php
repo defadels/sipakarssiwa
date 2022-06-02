@@ -61,7 +61,7 @@ elseif ($_SESSION['akses']==1 or $_SESSION['akses']==2){ ?>
                               $kat_pelanggaran=mysqli_query($connect,"SELECT * FROM kat_pelanggaran");
                               while ($kat=mysqli_fetch_array($kat_pelanggaran)) {
                              ?>
-                            <option <?php if( $kat['id_kat_pelanggaran']=='$idKatPelanggaran'){echo "selected"; } ?> value="<?php echo $kat['id_kat_pelanggaran']; ?>"><?php echo $kat['nama_kategori']; ?></option>
+                            <option <?php if( $kat['id_kat_pelanggaran']=='$idKatPelanggaran'){echo "selected"; } ?> value="<?php echo $kat['id_kat_pelanggaran']; ?>"><?php echo $kat['nama_katagori']; ?></option>
                             <?php } ?>
                           </select>
                         </div>
