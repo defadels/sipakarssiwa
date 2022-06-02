@@ -1,3 +1,3 @@
 <?php
-$base_url="httphttps://sipakarsiswa.site/";
+$base_url="https://sipakarsiswa.site/";
 ?>

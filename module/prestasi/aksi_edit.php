@@ -14,11 +14,13 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
 	
 	$queryEdit = mysqli_query($connect,"UPDATE prestasi SET nama_prestasi ='$namaPrestasi', poin ='$poin' WHERE id_prestasi='$idPrestasi'" );
 
+	$redirectSuccess = "main.php?module=prestasi";
+
 	if ($queryEdit) {
-		echo "<script> alert ('Data Prestasi Berhasil Diubah'); window.location = '$base_url'+'main.php?module=prestasi';</script>";
+		echo "<script> alert ('Data Prestasi Berhasil Diubah'); window.location = '$base_url'+'$redirectSuccess';</script>";
 	}
 	else {
-		echo "<script> alert('Data Prestasi Gagal Diubah'); window.location='main.php?module=edit_prestasi&id_prestasi='+'$idPrestasi';</script>";
+		echo "<script> alert('Data Prestasi Gagal Diubah'); window.location='/main.php?module=edit_prestasi&id_prestasi='+'$idPrestasi';</script>";
 	}
 }
 ?>
