@@ -346,7 +346,7 @@ else{ ?>
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-            Sistem Pembinaan Karakter Siswa - SMK N 2 Depok Sleman &copy;2017
+            Sistem Pembinaan Karakter Siswa - App Sipakarsiswa &copy;2022
           </div>
           <div class="clearfix"></div>
         </footer>
