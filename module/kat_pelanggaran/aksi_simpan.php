@@ -4,7 +4,7 @@
 
     $namaKatPelanggaran = $_POST['namaKatPelanggaran'];
 
-    $querySimpan = mysqli_query($connect,"INSERT INTO kat_pelanggaran (nama_kategori) VALUES ('$namaKatPelanggaran')");
+    $querySimpan = mysqli_query($connect,"INSERT INTO kat_pelanggaran (nama_katagori) VALUES ('$namaKatPelanggaran')");
 
     $redirectSuccess = "main.php?module=kat_pelanggaran";
 	$redirectFailed = "main.php?module=tambah_kat_pelanggaran";

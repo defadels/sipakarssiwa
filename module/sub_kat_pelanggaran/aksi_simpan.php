@@ -5,7 +5,7 @@
     $idKatPelanggaran = $_POST['katPelanggaran'];
     $subKatPelanggaran = $_POST['subKatPelanggaran'];
 
-    $querySimpan = mysqli_query($connect,"INSERT INTO sub_kat_pelanggaran (id_kat_pelanggaran,nama_sub_kategori) VALUES ('$idKatPelanggaran', '$subKatPelanggaran')");
+    $querySimpan = mysqli_query($connect,"INSERT INTO sub_kat_pelanggaran (id_kat_pelanggaran,nama_sub_katagori) VALUES ('$idKatPelanggaran', '$subKatPelanggaran')");
 
     $redirectSuccess = "main.php?module=pelanggaran";
 	$redirectFailed = "main.php?module=tambah_sub_kategori";

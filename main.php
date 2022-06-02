@@ -138,19 +138,19 @@ else{ ?>
                       $id_ortu=$q['id_ortu'];
                       if ($nis!=null){
                         $siswa = mysqli_query($connect,"SELECT * FROM siswa WHERE nis='$nis'");
-                        $s = mysqli_fetch_array($siswa);
-                        $nama=$s['nama_siswa'];
+                        $s = mysqli_fetch_assoc($siswa);
+                        $nama = $s['nama_siswa'];
                         
                       }
                       elseif ($nip!=null){
                         $guru = mysqli_query($connect,"SELECT * FROM guru WHERE nip='$nip'");
-                        $g = mysqli_fetch_array($guru);
-                        $nama=$g['nama_guru'];
+                        $g = mysqli_fetch_assoc($guru);
+                        $nama = $g['nama_guru'];
                       }
                       elseif ($id_ortu!=null){
                         $ortu = mysqli_query($connect,"SELECT * FROM orang_tua WHERE id_ortu='$id_ortu'");
-                        $o = mysqli_fetch_array($ortu);
-                        $nama=$o['nama_ortu'];
+                        $o = mysqli_fetch_assoc($ortu);
+                        $nama = $o['nama_ortu'];
                       }
                       else{
                         $nama="Not Found";

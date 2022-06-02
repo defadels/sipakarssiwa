@@ -42,7 +42,7 @@ elseif ($_SESSION['akses']==1 or $_SESSION['akses']==2){ ?>
                       $queryEdit=mysqli_query($connect,"SELECT * FROM kat_pelanggaran WHERE id_kat_pelanggaran='$idKategori'");
 
                       $hasilQuery=mysqli_fetch_array($queryEdit);
-                      $namaKategori=$hasilQuery['nama_kategori'];
+                      $namaKategori=$hasilQuery['nama_katagori'];
                       ?> 
 
                       <div class="form-group">

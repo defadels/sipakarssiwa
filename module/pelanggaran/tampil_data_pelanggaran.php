@@ -80,7 +80,7 @@ elseif ($_SESSION['akses']==1 or $_SESSION['akses']==2 or $_SESSION['akses']==5)
                                         ?>
                                         <tr class="even pointer">
                                           <td class=" "><?php echo $no;?></td>
-                                          <td class=" "><?php echo $kp['nama_kategori'];?></td>
+                                          <td class=" "><?php echo $kp['nama_katagori'];?></td>
                                           <td class=" last">
                                             <div class="btn-group">
                                               <a href="main.php?module=edit_kat_pelanggaran&id_kat_pelanggaran=<?php echo $kp['id_kat_pelanggaran']; ?>" class="btn btn-warning btn-sm"><i class='fa fa-pencil'></i> Edit </button></a>
@@ -97,7 +97,7 @@ elseif ($_SESSION['akses']==1 or $_SESSION['akses']==2 or $_SESSION['akses']==5)
 
                                         <tr class="odd pointer"> 
                                           <td class=" "><?php echo $no;?></td>
-                                          <td class=" "><?php echo $kp['nama_kategori'];?></td>
+                                          <td class=" "><?php echo $kp['nama_katagori'];?></td>
                                           <td class=" last">
                                             <div class="btn-group">
                                               <a href="main.php?module=edit_kat_pelanggaran&id_kat_pelanggaran=<?php echo $kp['id_kat_pelanggaran']; ?>" class="btn btn-warning btn-sm"><i class='fa fa-pencil'></i> Edit </button></a>
@@ -188,7 +188,7 @@ elseif ($_SESSION['akses']==1 or $_SESSION['akses']==2 or $_SESSION['akses']==5)
                                         </td>-->
 
                                         <td class=" "><?php echo $no;?></td>
-                                        <td class=" "><?php echo $subKat['nama_sub_kategori'];?></td>
+                                        <td class=" "><?php echo $subKat['nama_sub_katagori'];?></td>
                                         <td class=" last">
                                           <div class="btn-group">
                                             <a href="main.php?module=edit_sub_kategori&id_sub_kategori=<?php echo $subKat['id_sub_kategori']; ?>" class="btn btn-warning btn-sm"><i class='fa fa-pencil'></i> Edit</button></a>
@@ -203,7 +203,7 @@ elseif ($_SESSION['akses']==1 or $_SESSION['akses']==2 or $_SESSION['akses']==5)
                                       <tr class="odd pointer">
                                         
                                         <td class=" "><?php echo $no;?></td>
-                                        <td class=" "><?php echo $subKat['nama_sub_kategori'];?></td>
+                                        <td class=" "><?php echo $subKat['nama_sub_katagori'];?></td>
                                         <td class=" last">
                                           <div class="btn-group">
                                             <a href="main.php?module=edit_sub_kategori&id_sub_kategori=<?php echo $subKat['id_sub_kategori']; ?>" class="btn btn-warning btn-sm"><i class='fa fa-pencil'></i> Edit</button></a>

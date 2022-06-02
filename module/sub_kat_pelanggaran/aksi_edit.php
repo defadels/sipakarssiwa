@@ -12,10 +12,10 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
     $idKatPelanggaran = $_POST['katPelanggaran'];
     $namaSubKategori = $_POST['subKatPelanggaran'];
     
-    $queryEdit = mysqli_query($connect,"UPDATE sub_kat_pelanggaran SET nama_sub_kategori ='$namaSubKategori', id_kat_pelanggaran='$idKatPelanggaran' WHERE id_sub_kategori='$idSubKategori'" );
+    $queryEdit = mysqli_query($connect,"UPDATE sub_kat_pelanggaran SET nama_sub_katagori ='$namaSubKategori', id_kat_pelanggaran='$idKatPelanggaran' WHERE id_sub_katagori='$idSubKategori'" );
 
     $redirectSuccess = "main.php?module=pelanggaran";
-	$redirectFailed = "main.php?module=edit_sub_kategori&id_sub_kategori=";
+	$redirectFailed = "main.php?module=edit_sub_kategori&id_sub_katagori=";
 
     if ($queryEdit) {
         echo "<script> alert ('Data Sub Kategori Pelanggaran Berhasil Diubah'); window.location = '$base_url'+'$redirectSuccess';</script>";
