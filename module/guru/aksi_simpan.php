@@ -10,11 +10,14 @@
 
     $querySimpan = mysqli_query($connect,"INSERT INTO guru VALUES ('$nip', '$namaGuru', '$noHp', '$jabatan')");
 
+    $redirectSuccess = "main.php?module=guru";
+	$redirectFailed = "main.php?module=tambah_guru";
+
     if ($querySimpan) {
-        echo "<script> alert('Data guru Berhasil Masuk'); window.location = '$base_url'+'main.php?module=guru';</script>";
+        echo "<script> alert('Data guru Berhasil Masuk'); window.location = '$base_url'+'$redirectSuccess';</script>";
     }
     else {
-        echo "<script> alert('Data guru Gagal Dimasukkan'); window.location = '$base_url'+'main.php?module=tambah_guru';</script>";
+        echo "<script> alert('Data guru Gagal Dimasukkan'); window.location = '$base_url'+'$redirectFailed';</script>";
 
     }
 

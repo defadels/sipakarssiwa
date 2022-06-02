@@ -10,11 +10,15 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
 
 	$idOrtu=$_GET['id_ortu'];
 	$queryHapus=mysqli_query($connect,"DELETE FROM orang_tua WHERE id_ortu='$idOrtu'");
+
+	$redirectSuccess = "main.php?module=ortu";
+	$redirectFailed = "main.php?module=ortu";
+
 	if ($queryHapus) {
-		echo "<script> alert('Data Orang Tua Berhasil di Hapus'); window.location='$base_url'+'main.php?module=ortu';</script>";
+		echo "<script> alert('Data Orang Tua Berhasil di Hapus'); window.location='$base_url'+'$redirectSuccess';</script>";
 	}
 	else {
-		echo "<script> alert('Data Orang Tua Gagal di Hapus'); window.location='$base_url'+'main.php?module=ortu';</script> ";
+		echo "<script> alert('Data Orang Tua Gagal di Hapus'); window.location='$base_url'+'$redirectFailed';</script> ";
 	}
 
 	}

@@ -19,11 +19,14 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
 	
 	$queryEdit = mysqli_query($connect,"UPDATE kelas SET tingkat_kelas ='$tingkatKelas', id_jurusan='$idJurusan', sub_kelas='$subKelas', nip='$nip', jml_siswa='$jmlSiswa' WHERE id_kelas='$idKelas'" );
 
+	$redirectSuccess = "main.php?module=kelas";
+	$redirectFailed = "main.php?module=edit_kelas&id_kelas=";
+
 	if ($queryEdit) {
-		echo "<script> alert ('Data Kelas Berhasil Diubah'); window.location = '$base_url'+'main.php?module=kelas';</script>";
+		echo "<script> alert ('Data Kelas Berhasil Diubah'); window.location = '$base_url'+'$redirectSuccess';</script>";
 	}
 	else {
-		echo "<script> alert('Data Kelas Gagal Diubah'); window.location='$base_url'+'main.php?module=edit_kelas&id_kelas='+'$idKelas';</script>";
+		echo "<script> alert('Data Kelas Gagal Diubah'); window.location='$base_url'+'$redirectFailed'+'$idKelas';</script>";
 	}
 }
 ?>

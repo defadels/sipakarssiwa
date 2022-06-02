@@ -19,8 +19,11 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
 
 	if ($hasilCari>0) {
 		$queryEdit = mysqli_query($connect,"UPDATE th_ajaran SET sekarang ='Y' WHERE id_th_ajaran='$baru'" );
+
+		$redirectSuccess = "main.php?module=home_admin";
+
 		if ($queryEdit) {
-			echo "<script> alert ('Tahun Ajaran Berhasil Diubah'); window.location = '$base_url'+'main.php?module=home_admin';</script>";
+			echo "<script> alert ('Tahun Ajaran Berhasil Diubah'); window.location = '$base_url'+'$redirectSuccess';</script>";
 		}
 		else {
 			//echo "<script> alert('Tahun Ajaran Gagal Diubah1'); window.location='$base_url'+'main.php?module=home_admin&id_th_ajaran='+'$idThAjaran';</script>";
@@ -28,8 +31,11 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
 	}
 	else{
 		$queryTambah = mysqli_query($connect, "INSERT INTO th_ajaran (tahun_ajaran, sekarang) VALUES ('$thAjaran','Y')");
+
+		$redirectSuccess = "main.php?module=home_admin";
+
 		if ($queryTambah) {
-			echo "<script> alert ('Tahun Ajaran Berhasil Diubah'); window.location = '$base_url'+'main.php?module=home_admin';</script>";
+			echo "<script> alert ('Tahun Ajaran Berhasil Diubah'); window.location = '$base_url'+'$redirectSuccess';</script>";
 		}
 		else {
 			//echo "<script> alert('Tahun Ajaran Gagal Diubah2'); window.location='$base_url'+'main.php?module=home_admin&id_th_ajaran='+'$idThAjaran';</script>";

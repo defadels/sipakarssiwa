@@ -21,11 +21,14 @@
 
     $querySimpan = mysqli_query($connect,"INSERT INTO detail_poin (tanggal, tahun_ajaran, nis, id_pelanggaran, ket) VALUES ('$tanggal', '$thAjaran', '$nis', '$idPelanggaran', '$ket')");
 
+    $redirectSuccess = "main.php?module=input_pelanggaran_siswa";
+    $redirectFailed = "main.php?module=tambah_pelanggaran_siswa";
+
     if ($querySimpan) {
-        echo "<script> alert('Data Pelanggaran Siswa Berhasil Masuk'); window.location = '$base_url'+'main.php?module=input_pelanggaran_siswa';</script>";
+        echo "<script> alert('Data Pelanggaran Siswa Berhasil Masuk'); window.location = '$base_url'+'$redirectSuccess';</script>";
     }
     else {
-        echo "<script> alert('Data Pelanggaran Siswa Gagal Dimasukkan'); window.location = '$base_url'+'main.php?module=tambah_pelanggaran_siswa';</script>";
+        echo "<script> alert('Data Pelanggaran Siswa Gagal Dimasukkan'); window.location = '$base_url'+'$redirectFailed';</script>";
 
     }
 

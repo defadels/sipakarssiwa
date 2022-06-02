@@ -28,11 +28,14 @@
     
         $querySimpan = mysqli_query($connect,"INSERT INTO siswa VALUES ('$nis', '$namaSiswa', '$thAngkatan', '$alamat', '$idKelas', '$idOrtu')");
 
+        $redirectSuccess = "main.php?module=siswa";
+	    $redirectFailed = "main.php?module=tambah_siswa";
+
         if ($querySimpan) {
-            echo "<script> alert('Data siswa Berhasil Masuk'); window.location = '$base_url'+'main.php?module=siswa';</script>";
+            echo "<script> alert('Data siswa Berhasil Masuk'); window.location = '$base_url'+'$redirectSuccess';</script>";
         }
         else {
-            echo "<script> alert('Data siswa Gagal Dimasukkan'); window.location = '$base_url'+'main.php?module=tambah_siswa';</script>";
+            echo "<script> alert('Data siswa Gagal Dimasukkan'); window.location = '$base_url'+'$redirectFailed';</script>";
 
         }
     }

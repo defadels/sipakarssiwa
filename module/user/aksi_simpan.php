@@ -31,11 +31,14 @@
 
     $querySimpan = mysqli_query($connect,"INSERT INTO user (username, password, nip, nis, id_ortu, hak_akses) VALUES ('$username', '$pass', '$nip', '$nis', '$idOrtu', '$hakAkses')");
 
+    $redirectSuccess = "main.php?module=user";
+	$redirectFailed = "main.php?module=tambah_user";
+
     if ($querySimpan) {
-        echo "<script> alert('Data User Berhasil Masuk'); window.location = '$base_url'+'main.php?module=user';</script>";
+        echo "<script> alert('Data User Berhasil Masuk'); window.location = '$base_url'+'$redirectSuccess';</script>";
     }
     else {
-        echo "<script> alert('Data User Gagal Dimasukkan'); window.location = '$base_url'+'main.php?module=tambah_user';</script>";
+        echo "<script> alert('Data User Gagal Dimasukkan'); window.location = '$base_url'+'$redirectFailed';</script>";
 
     }
 

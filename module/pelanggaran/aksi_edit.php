@@ -15,11 +15,14 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
     
     $queryEdit = mysqli_query($connect,"UPDATE pelanggaran SET nama_pelanggaran ='$namaPelanggaran', id_sub_kategori='$idSubKategori', poin='$poin' WHERE id_pelanggaran='$idPelanggaran'" );
 
+    $redirectSuccess = "main.php?module=pelanggaran";
+    $redirectFailed = "main.php?module=edit_pelanggaran&id_pelanggaran=";
+
     if ($queryEdit) {
-        echo "<script> alert ('Data Pelanggaran Berhasil Diubah'); window.location = '$base_url'+'main.php?module=pelanggaran';</script>";
+        echo "<script> alert ('Data Pelanggaran Berhasil Diubah'); window.location = '$base_url'+'$redirectSuccess';</script>";
     }
     else {
-        echo "<script> alert('Data Pelanggaran Gagal Diubah'); window.location='main.php?module=edit_pelanggaran&id_pelanggaran='+'$idPelanggaran';</script>";
+        echo "<script> alert('Data Pelanggaran Gagal Diubah'); window.location='$redirectFailed'+'$idPelanggaran';</script>";
     }
 }
 ?>

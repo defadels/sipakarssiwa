@@ -13,11 +13,14 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
 	
 	$queryEdit = mysqli_query($connect,"UPDATE kat_pelanggaran SET nama_kategori ='$namaKategori' WHERE id_kat_pelanggaran='$idKategori'" );
 
+	$redirectSuccess = "main.php?module=kat_pelanggaran";
+	$redirectFailed = "main.php?module=edit_kat_pelanggaran&id_kat_pelanggaran=";
+
 	if ($queryEdit) {
-		echo "<script> alert ('Data Kategori Berhasil Diubah'); window.location = '$base_url'+'main.php?module=kat_pelanggaran';</script>";
+		echo "<script> alert ('Data Kategori Berhasil Diubah'); window.location = '$base_url'+'$redirectSuccess';</script>";
 	}
 	else {
-		echo "<script> alert('Data Kategori Gagal Diubah'); window.location='main.php?module=edit_kat_pelanggaran&id_kat_pelanggaran='+'$idKategori';</script>";
+		echo "<script> alert('Data Kategori Gagal Diubah'); window.location='$redirectFailed'+'$idKategori';</script>";
 	}
 }
 ?>

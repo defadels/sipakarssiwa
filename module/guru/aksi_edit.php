@@ -16,11 +16,14 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
 	
 	$queryEdit = mysqli_query($connect,"UPDATE guru SET nama_guru='$namaGuru', no_hp='$noHp', jabatan='$jabatan' WHERE nip='$nip'" );
 
+	$redirectSuccess = "main.php?module=guru";
+	$redirectFailed = "main.php?module=edit_guru&nip=";
+
 	if ($queryEdit) {
-		echo "<script> alert ('Data Guru Berhasil Diubah'); window.location = '$base_url'+'main.php?module=guru';</script>";
+		echo "<script> alert ('Data Guru Berhasil Diubah'); window.location = '$base_url'+'$redirectSuccess';</script>";
 	}
 	else {
-		echo "<script> alert('Data Guru Gagal Diubah'); window.location='$base_url'+'main.php?module=edit_guru&nip='+'$nip';</script>";
+		echo "<script> alert('Data Guru Gagal Diubah'); window.location='$base_url'+'$redirectFailed'+'$nip';</script>";
 	}
 }
 ?>

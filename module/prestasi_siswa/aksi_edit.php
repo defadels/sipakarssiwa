@@ -26,11 +26,14 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
     
     $queryEdit = mysqli_query($connect,"UPDATE detail_poin SET tanggal='$tanggal', nis='$nis', id_prestasi='$idPrestasi', tahun_ajaran='$thAjaran', ket='$ket' WHERE id_detail_poin='$idDetailPoin'" );
 
+    $redirectSucces = "main.php?module=input_prestasi_siswa";
+    $redirectFailed = "main.php?module=edit_prestasi_siswa&id_detail_poin=";
+
     if ($queryEdit) {
-        echo "<script> alert ('Data Prestasi Siswa Berhasil Diubah'); window.location = '$base_url'+'main.php?module=input_prestasi_siswa';</script>";
+        echo "<script> alert ('Data Prestasi Siswa Berhasil Diubah'); window.location = '$base_url'+'$redirectSuccess';</script>";
     }
     else {
-        echo "<script> alert('Data Prestasi Siswa Gagal Diubah'); window.location='main.php?module=edit_prestasi_siswa&id_detail_poin='+'$idDetailPoin';</script>";
+        echo "<script> alert('Data Prestasi Siswa Gagal Diubah'); window.location='$redirectFailed'+'$idDetailPoin';</script>";
     }
 }
 ?>

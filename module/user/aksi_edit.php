@@ -35,11 +35,14 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
 
 	$queryEdit = mysqli_query($connect,"UPDATE user SET username='$username', password='$pass', nis='$nis', nip='$nip', id_ortu='$idOrtu', hak_akses='$hakAkses' WHERE id_login='$idLogin'" );
 
+    $redirectSuccess = "main.php?module=user";
+	$redirectFailed = "main.php?module=edit_user&id_login=";
+
 	if ($queryEdit) {
-		echo "<script> alert ('Data User Berhasil Diubah'); window.location = '$base_url'+'main.php?module=user';</script>";
+		echo "<script> alert ('Data User Berhasil Diubah'); window.location = '$base_url'+'$redirectSuccess';</script>";
 	}
 	else {
-		echo "<script> alert('Data User Gagal Diubah'); window.location='$base_url'+'main.php?module=edit_user&id_login='+'$idLogin';</script>";
+		echo "<script> alert('Data User Gagal Diubah'); window.location='$base_url'+'$redirectFailed'+'$idLogin';</script>";
 	}
 }
 ?>

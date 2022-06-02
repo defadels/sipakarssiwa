@@ -10,11 +10,15 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
 
 	$idKelas=$_GET['id_kelas'];
 	$queryHapus=mysqli_query($connect,"DELETE FROM kelas WHERE id_kelas='$idKelas'");
+
+	$redirectSuccess = "main.php?module=kelas";
+	$redirectFailed = "main.php?module=kelas";
+
 	if ($queryHapus) {
-		echo "<script> alert('Data Kelas Berhasil di Hapus'); window.location='$base_url'+'main.php?module=kelas';</script>";
+		echo "<script> alert('Data Kelas Berhasil di Hapus'); window.location='$base_url'+'$redirectSuccess';</script>";
 	}
 	else {
-		echo "<script> alert('Data Kelas Gagal di Hapus'); window.location='$base_url'+'main.php?module=kelas';</script> ";
+		echo "<script> alert('Data Kelas Gagal di Hapus'); window.location='$base_url'+'$redirectFailed';</script> ";
 	}
 
 	}

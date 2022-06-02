@@ -12,11 +12,14 @@
 
     $querySimpan = mysqli_query($connect,"INSERT INTO kelas (tingkat_kelas, id_jurusan, sub_kelas, nip, jml_siswa) VALUES ('$tingkatKelas', '$idJurusan', '$subKelas', '$nip', '$jmlSiswa')");
 
+    $redirectSuccess = "main.php?module=kelas";
+	$redirectFailed = "main.php?module=tambah_kelas";
+
     if ($querySimpan) {
-        echo "<script> alert('Data Kelas Berhasil Masuk'); window.location = '$base_url'+'main.php?module=kelas';</script>";
+        echo "<script> alert('Data Kelas Berhasil Masuk'); window.location = '$base_url'+'$redirectSuccess';</script>";
     }
     else {
-        echo "<script> alert('Data Kelas Gagal Dimasukkan'); window.location = '$base_url'+'main.php?module=tambah_kelas';</script>";
+        echo "<script> alert('Data Kelas Gagal Dimasukkan'); window.location = '$base_url'+'$redirectFailed';</script>";
 
     }
 

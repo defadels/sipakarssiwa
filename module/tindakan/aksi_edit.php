@@ -14,11 +14,14 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
 	
 	$queryEdit = mysqli_query($connect,"UPDATE tindakan SET nama_tindakan ='$namaTindakan', ketentuan ='$ketentuan' WHERE id_tindakan='$idTindakan'" );
 
+	$redirectSuccess = "main.php?module=tindakan";
+	$redirectFailed = "main.php?module=edit_tindakan&id_tindakan=";
+
 	if ($queryEdit) {
-		echo "<script> alert ('Data Tindakan Berhasil Diubah'); window.location = '$base_url'+'main.php?module=tindakan';</script>";
+		echo "<script> alert ('Data Tindakan Berhasil Diubah'); window.location = '$base_url'+'$redirectSuccess';</script>";
 	}
 	else {
-		echo "<script> alert('Data Tindakan Gagal Diubah'); window.location='$base_url'+'main.php?module=edit_tindakan&id_tindakan='+'$idTindakan';</script>";
+		echo "<script> alert('Data Tindakan Gagal Diubah'); window.location='$base_url'+'$redirectFailed'+'$idTindakan';</script>";
 	}
 }
 ?>

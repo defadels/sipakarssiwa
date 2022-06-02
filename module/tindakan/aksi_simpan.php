@@ -7,11 +7,14 @@
 
     $querySimpan = mysqli_query($connect,"INSERT INTO tindakan (nama_tindakan, ketentuan) VALUES ('$namaTindakan', '$ketentuan')");
 
+    $redirectSuccess = "main.php?module=tindakan";
+	$redirectFailed = "main.php?module=tambah_tindakan";
+
     if ($querySimpan) {
-        echo "<script> alert('Data Tindakan Berhasil Masuk'); window.location = '$base_url'+'main.php?module=tindakan';</script>";
+        echo "<script> alert('Data Tindakan Berhasil Masuk'); window.location = '$base_url'+'$redirectSuccess';</script>";
     }
     else {
-        echo "<script> alert('Data Tindakan Gagal Dimasukkan'); window.location = '$base_url'+'main.php?module=tambah_tindakan';</script>";
+        echo "<script> alert('Data Tindakan Gagal Dimasukkan'); window.location = '$base_url'+'$redirectFailed';</script>";
     }
 
 ?>

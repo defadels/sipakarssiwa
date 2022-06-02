@@ -6,11 +6,14 @@
 
     $querySimpan = mysqli_query($connect,"INSERT INTO kat_pelanggaran (nama_kategori) VALUES ('$namaKatPelanggaran')");
 
+    $redirectSuccess = "main.php?module=kat_pelanggaran";
+	$redirectFailed = "main.php?module=tambah_kat_pelanggaran";
+
     if ($querySimpan) {
-        echo "<script> alert('Data Kategori Berhasil Masuk'); window.location = '$base_url'+'main.php?module=kat_pelanggaran';</script>";
+        echo "<script> alert('Data Kategori Berhasil Masuk'); window.location = '$base_url'+'$redirectSuccess';</script>";
     }
     else {
-        echo "<script> alert('Data Kategori Gagal Dimasukkan'); window.location = '$base_url'+'main.php?module=tambah_kat_pelanggaran';</script>";
+        echo "<script> alert('Data Kategori Gagal Dimasukkan'); window.location = '$base_url'+'$redirectFailed';</script>";
     }
 
 ?>

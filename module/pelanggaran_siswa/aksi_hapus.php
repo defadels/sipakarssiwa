@@ -10,11 +10,15 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
 
 	$idDetailPoin=$_GET['id_detail_poin'];
 	$queryHapus=mysqli_query($connect,"DELETE FROM detail_poin WHERE id_detail_poin='$idDetailPoin'");
+	
+	$redirectSuccess = "main.php?module=input_pelanggaran_siswa";
+	$redirectFailed = "main.php?module=input_pelanggaran_siswa";
+
 	if ($queryHapus) {
-		echo "<script> alert('Data Pelanggaran Siswa Berhasil di Hapus'); window.location='$base_url'+'main.php?module=input_pelanggaran_siswa';</script>";
+		echo "<script> alert('Data Pelanggaran Siswa Berhasil di Hapus'); window.location='$base_url'+'$redirectSuccess';</script>";
 	}
 	else {
-		echo "<script> alert('Data Pelanggaran Siswa Gagal di Hapus'); window.location='$base_url'+'main.php?module=input_pelanggaran_siswa';</script> ";
+		echo "<script> alert('Data Pelanggaran Siswa Gagal di Hapus'); window.location='$base_url'+'$redirectFailed';</script> ";
 	}
 
 	}

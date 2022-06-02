@@ -10,11 +10,15 @@ if (empty($_SESSION['namauser']) AND empty($_SESSION['passuser'])) {
 
 	$nip=$_GET['nip'];
 	$queryHapus=mysqli_query($connect,"DELETE FROM guru WHERE nip='$nip'");
+	
+	$redirectSuccess = "main.php?module=guru";
+	$redirectFailed = "main.php?module=guru";
+
 	if ($queryHapus) {
-		echo "<script> alert('Data Guru Berhasil di Hapus'); window.location='$base_url'+'main.php?module=guru';</script>";
+		echo "<script> alert('Data Guru Berhasil di Hapus'); window.location='$base_url'+'$redirectSuccess';</script>";
 	}
 	else {
-		echo "<script> alert('Data Guru Gagal di Hapus'); window.location='$base_url'+'main.php?module=guru';</script> ";
+		echo "<script> alert('Data Guru Gagal di Hapus'); window.location='$base_url'+'$redirectFailed';</script> ";
 	}
 
 	}

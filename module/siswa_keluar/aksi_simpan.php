@@ -15,11 +15,14 @@
             $queryKeluar=mysqli_query($connect, "INSERT INTO siswa_do VALUES ('$nis', '$nama', '$tahunKeluar', '$jurusan')");
             $queryHapus=mysqli_query($connect,"DELETE FROM siswa WHERE nis='$nis'");    
 
+            $redirectSuccess = "main.php?module=siswa_keluar";
+	        $redirectFailed = "main.php?module=siswa_keluar";
+
     if ($queryKeluar AND $queryHapus) {
-        echo "<script> alert('Siswa Telah Dikeluarkan'); window.location = '$base_url'+'main.php?module=siswa_keluar';</script>";
+        echo "<script> alert('Siswa Telah Dikeluarkan'); window.location = '$base_url'+' $redirectSuccess';</script>";
     }
     else {     
-        echo "<script> alert('Siswa Gagal Dikeluarkan'); window.location = '$base_url'+'main.php?module=siswa_keluar'; </script>";
+        echo "<script> alert('Siswa Gagal Dikeluarkan'); window.location = '$base_url'+'$redirectFailed'; </script>";
     }
 
 ?>
