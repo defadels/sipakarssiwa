@@ -41,7 +41,7 @@ elseif ($_SESSION['akses']==1 or $_SESSION['akses']==2){ ?>
                             $ta=mysqli_fetch_array($th_ajaran);
                             $thAjaran=$ta['tahun_ajaran'];
                            ?>
-                          <input type="text" id="thAjaran" name="thAjaran" value="<?php echo $ta['tahun_ajaran']; ?>" required="required" class="form-control col-md-7 col-xs-12" >
+                          <input type="text" id="thAjaran" class="form-control col-md-10" name="thAjaran" value="<?php echo $ta['tahun_ajaran']; ?>" required="required" class="form-control col-md-7 col-xs-12" >
                         </div>
                       </div>
 
@@ -51,7 +51,7 @@ elseif ($_SESSION['akses']==1 or $_SESSION['akses']==2){ ?>
                           <?php 
                             $tgl=date('Y-m-d');
                            ?>
-                          <input type="text" id="tanggal" name="tanggal" value="<?php echo $tgl; ?>" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="tanggal" class="form-control col-md-10" name="tanggal" value="<?php echo $tgl; ?>" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       
@@ -83,7 +83,7 @@ elseif ($_SESSION['akses']==1 or $_SESSION['akses']==2){ ?>
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Pelanggaran</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" name="pelanggaran" id="autocomplete-pelanggaran" class="form-control col-md-10" style="float: left;" required="required" />
-                          <div id="autocomplete-container" style="position: relative; float: left; width: 400px; margin: 10px;"></div>
+                          <div id="autocomplete-container-pelanggaran" style="position: relative; float: left; width: 400px; margin: 10px;"></div>
                         </div>
                       </div>
 
