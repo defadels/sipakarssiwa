@@ -15,8 +15,8 @@
             </li>
             <li><a href="main.php?module=jurusan"><i class="fa fa-navicon"></i> Jurusan </a>
             </li>
-            <li><a href="main.php?module=kelas"><i class="fa fa-navicon"></i> Kelas </a>
-            </li>
+            <!-- <li><a href="main.php?module=kelas"><i class="fa fa-navicon"></i> Kelas </a>
+            </li> -->
             <li><a><i class="fa fa-warning"></i> Pelanggaran <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu">
                 <li><a href="main.php?module=pelanggaran">Pelanggaran</a></li>
