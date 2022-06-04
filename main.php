@@ -131,26 +131,26 @@ else{ ?>
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                     <!--<img src="images/img.jpg" alt="">-->
                     <?php
-                      $query = mysqli_query($connect,"SELECT * FROM user WHERE username='$_SESSION[namauser]' AND password='$_SESSION[passuser]'");
+                      $query = mysqli_query($connect,"SELECT * FROM user WHERE username='$_SESSION[namauser]' AND password='$_SESSION[passuser]'") or die(mysqli_error($connect));
                       $q = mysqli_fetch_array($query);
                       $nis=$q['nis'];
                       $nip=$q['nip'];
                       $id_ortu=$q['id_ortu'];
                       if ($nis!=null){
-                        $siswa = mysqli_query($connect,"SELECT * FROM siswa WHERE nis='$nis'");
+                        $siswa = mysqli_query($connect,"SELECT * FROM siswa WHERE nis='$nis'") or die(mysqli_error($connect));
                         $s = mysqli_fetch_assoc($siswa);
                         $nama = $s['nama_siswa'];
                         
                       }
                       elseif ($nip!=null){
-                        $guru = mysqli_query($connect,"SELECT * FROM guru WHERE nip='$nip'");
+                        $guru = mysqli_query($connect,"SELECT * FROM guru WHERE nip='$nip'") or die(mysqli_error($connect));
                         $g = mysqli_fetch_assoc($guru);
-                        $nama = $g['nama_guru'];
+                        $nama=$g['nama_guru'];
                       }
                       elseif ($id_ortu!=null){
-                        $ortu = mysqli_query($connect,"SELECT * FROM orang_tua WHERE id_ortu='$id_ortu'");
+                        $ortu = mysqli_query($connect,"SELECT * FROM orang_tua WHERE id_ortu='$id_ortu'") or die(mysqli_error($connect));
                         $o = mysqli_fetch_assoc($ortu);
-                        $nama = $o['nama_ortu'];
+                        $nama=$o['nama_ortu'];
                       }
                       else{
                         $nama="Not Found";
@@ -346,7 +346,7 @@ else{ ?>
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-            Sistem Pembinaan Karakter Siswa - App Sipakarsiswa &copy;2022
+            Sistem Pembinaan Karakter Siswa - SMK N 2 Depok Sleman &copy;2017
           </div>
           <div class="clearfix"></div>
         </footer>
@@ -383,7 +383,7 @@ else{ ?>
     <!-- Flot plugins -->
     <script src="assets/js/flot/jquery.flot.orderBars.js"></script>
     <script src="assets/js/flot/date.js"></script>
-    <script src="assets/js/flot/jquery.flot.spline.js"></script> 
+    <script src="assets/js/flot/jquery.flot.spline.js"></script>
     <script src="assets/js/flot/curvedLines.js"></script>
     <!-- jVectorMap -->
     <script src="assets/js/maps/jquery-jvectormap-2.0.3.min.js"></script>
@@ -963,12 +963,12 @@ else{ ?>
         <?php
         include "lib/koneksi.php";
         //get matched data from skills table
-        $query = $connect->query("SELECT * FROM pelanggaran JOIN sub_kat_pelanggaran ON pelanggaran.id_sub_katagori=sub_kat_pelanggaran.id_sub_katagori JOIN kat_pelanggaran ON sub_kat_pelanggaran.id_kat_pelanggaran=kat_pelanggaran.id_kat_pelanggaran");
+        $query = $connect->query("SELECT * FROM pelanggaran JOIN sub_kat_pelanggaran ON pelanggaran.id_sub_kategori=sub_kat_pelanggaran.id_sub_kategori JOIN kat_pelanggaran ON sub_kat_pelanggaran.id_kat_pelanggaran=kat_pelanggaran.id_kat_pelanggaran");
         ?>
 
         var pelanggaran ={
           <?php while($row=mysqli_fetch_array($query)){
-            echo "$row[id_pelanggaran]".":\""."$row[id_pelanggaran]"." - "."$row[nama_sub_katagori]"." - "."$row[nama_pelanggaran]"."\",";
+            echo "$row[id_pelanggaran]".":\""."$row[id_pelanggaran]"." - "."$row[nama_sub_kategori]"." - "."$row[nama_pelanggaran]"."\",";
           } ?>
         };
 
