@@ -191,7 +191,7 @@ elseif ($_SESSION['akses']==1 or $_SESSION['akses']==2 or $_SESSION['akses']==5)
                                         <td class=" "><?php echo $subKat['nama_sub_katagori'];?></td>
                                         <td class=" last">
                                           <div class="btn-group">
-                                            <a href="main.php?module=edit_sub_kategori&id_sub_kategori=<?php echo $subKat['id_sub_katagori']; ?>" class="btn btn-warning btn-sm"><i class='fa fa-pencil'></i> Edit</button></a>
+                                            <a href="main.php?module=edit_sub_kategori&id_sub_katagori=<?php echo $subKat['id_sub_katagori']; ?>" class="btn btn-warning btn-sm"><i class='fa fa-pencil'></i> Edit</button></a>
                                           </div>
                                         </td>
                                       </tr>
@@ -278,7 +278,7 @@ elseif ($_SESSION['akses']==1 or $_SESSION['akses']==2 or $_SESSION['akses']==5)
                       <tbody>
 
                         <?php 
-                            $pelanggaran = mysqli_query($connect,"SELECT * FROM pelanggaran JOIN sub_kat_pelanggaran ON pelanggaran.id_sub_katagori=sub_kat_pelanggaran.id_sub_katagori JOIN kat_pelanggaran ON kat_pelanggaran.id_kat_pelanggaran=sub_kat_pelanggaran.id_kat_pelanggaran
+                            $pelanggaran = mysqli_query($connect,"SELECT * FROM pelanggaran JOIN kat_pelanggaran ON pelanggaran.id_sub_katagori=sub_kat_pelanggaran.id_sub_katagori JOIN kat_pelanggaran ON kat_pelanggaran.id_kat_pelanggaran=sub_kat_pelanggaran.id_kat_pelanggaran
                               ");
                             $no=1;
                             while($plg=mysqli_fetch_array($pelanggaran)){
