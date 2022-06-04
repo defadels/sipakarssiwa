@@ -346,7 +346,7 @@ else{ ?>
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-            Sistem Pembinaan Karakter Siswa - SMK N 2 Depok Sleman &copy;2017
+            Sistem Pembinaan Karakter Siswa - sipakarsiswa.site &copy;2022
           </div>
           <div class="clearfix"></div>
         </footer>
@@ -982,7 +982,7 @@ else{ ?>
         // initialize autocomplete with custom appendTo
         $('#autocomplete-pelanggaran').autocomplete({
           lookup: pelanggaranArray,
-          appendTo: '#autocomplete-container'
+          appendTo: '#autocomplete-container-pelanggaran'
         });
       });
     </script>

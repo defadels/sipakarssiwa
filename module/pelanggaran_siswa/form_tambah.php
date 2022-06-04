@@ -83,7 +83,7 @@ elseif ($_SESSION['akses']==1 or $_SESSION['akses']==2){ ?>
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Pelanggaran</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" name="pelanggaran" id="autocomplete-pelanggaran" class="form-control col-md-10" style="float: left;" required="required" />
-                          <div id="autocomplete-container" style="position: relative; float: left; width: 400px; margin: 10px;"></div>
+                          <div id="autocomplete-container-pelanggaran" style="position: relative; float: left; width: 400px; margin: 10px;"></div>
                         </div>
                       </div>
 
