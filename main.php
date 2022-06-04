@@ -963,12 +963,12 @@ else{ ?>
         <?php
         include "lib/koneksi.php";
         //get matched data from skills table
-        $query = $connect->query("SELECT * FROM pelanggaran JOIN sub_kat_pelanggaran ON pelanggaran.id_sub_kategori=sub_kat_pelanggaran.id_sub_kategori JOIN kat_pelanggaran ON sub_kat_pelanggaran.id_kat_pelanggaran=kat_pelanggaran.id_kat_pelanggaran");
+        $query = $connect->query("SELECT * FROM pelanggaran JOIN sub_kat_pelanggaran ON pelanggaran.id_sub_katagori=sub_kat_pelanggaran.id_sub_katagori JOIN kat_pelanggaran ON sub_kat_pelanggaran.id_kat_pelanggaran=kat_pelanggaran.id_kat_pelanggaran");
         ?>
 
         var pelanggaran ={
           <?php while($row=mysqli_fetch_array($query)){
-            echo "$row[id_pelanggaran]".":\""."$row[id_pelanggaran]"." - "."$row[nama_sub_kategori]"." - "."$row[nama_pelanggaran]"."\",";
+            echo "$row[id_pelanggaran]".":\""."$row[id_pelanggaran]"." - "."$row[nama_sub_katagori]"." - "."$row[nama_pelanggaran]"."\",";
           } ?>
         };
 
@@ -977,7 +977,7 @@ else{ ?>
             value: value,
             data: key
           };
-        });
+        }); 
 
         // initialize autocomplete with custom appendTo
         $('#autocomplete-pelanggaran').autocomplete({

@@ -76,7 +76,7 @@ elseif ($_SESSION['akses']==1 or $_SESSION['akses']==2){ ?>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" name="siswa" id="autocomplete-siswa" class="form-control col-md-10" style="float: left;" required="required" />
                           <div id="autocomplete-container" style="position: relative; float: left; width: 400px; margin: 10px;"></div>
-                        </div>
+                        </div> 
                       </div>
 
                       <div class="item form-group">
