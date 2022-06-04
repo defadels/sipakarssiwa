@@ -982,7 +982,7 @@ else{ ?>
         // initialize autocomplete with custom appendTo
         $('#autocomplete-pelanggaran').autocomplete({
           lookup: pelanggaranArray,
-          appendTo: '#autocomplete-container-pelanggaran'
+          appendTo: '#autocomplete-container'
         });
       });
     </script>
