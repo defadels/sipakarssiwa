@@ -267,7 +267,7 @@ elseif ($_SESSION['akses']==1 or $_SESSION['akses']==2 or $_SESSION['akses']==5)
                           <th>Pelanggaran</th>
                           <th>Jumlah Poin</th>
                           <?php
-                            if($_SESSION['akses']==1 or $_SESSION['akses']==2){
+                            if($_SESSION['akses']==1 || $_SESSION['akses']==2){
                           ?>
                           <th>Aksi</th>
                           <?php } ?>
